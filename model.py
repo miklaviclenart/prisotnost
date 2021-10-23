@@ -8,5 +8,10 @@ class Udelezenec:
 
 def v_seznam(udelezenec):
     """"Objekt 'udeleženec' zapiše v seznam v JSON datoteki."""
-    with open('seznam.json', 'a') as dat:
-        dat.write(json.dumps(udelezenec.__dict__))
+    with open('seznam.json', 'r') as dat:
+        seznam = json.load(dat)
+    
+    seznam.append(json.dumps(udelezenec.__dict__))
+
+    with open('seznam.json', 'w') as dat:
+        json.dump(seznam, dat, indent=4)
