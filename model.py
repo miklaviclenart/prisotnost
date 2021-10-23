@@ -1,6 +1,4 @@
 import json
-import os.path
-
 
 class Udelezenec:
     def __init__(self, ime, priimek) -> None:
@@ -19,7 +17,7 @@ def v_seznam(objekt, ime_datoteke):
 
 # Ali datoteka s seznamom že obstaja? 
 
-    if os.path.isfile(ime_datoteke):
+    try:
         with open(ime_datoteke, 'r', encoding='utf-8') as dat:
             seznam = json.load(dat)
 
@@ -30,7 +28,7 @@ def v_seznam(objekt, ime_datoteke):
 
 # Če ne obstaja, odpri novo in objekt dodaj v prazen seznam.
 
-    else:
+    except FileNotFoundError:
         with open(ime_datoteke, 'a', encoding='utf-8') as dat:
             seznam = []
             seznam.append(objekt.__dict__)
