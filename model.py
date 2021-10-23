@@ -37,7 +37,7 @@ def v_seznam(objekt, ime_datoteke):
 
 def prisotni(manjkajoci):
     """Vrne seznam vseh prosotnih, t.j. vseh v 'seznam.json' datoteki, ki jih ne navedemo v seznamu 'manjkajoci'."""
-    with open('seznam.json', 'r', encoding='utf-8') as dat:
+    with open('udelezenci.json', 'r', encoding='utf-8') as dat:
         udelezenci = json.load(dat)
     
     prisotni = []
