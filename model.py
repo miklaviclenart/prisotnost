@@ -16,7 +16,7 @@ def v_seznam(udelezenec):
         with open('seznam.json', 'r') as dat:
             seznam = json.load(dat)
 
-        seznam.append(json.dumps(udelezenec.__dict__))
+        seznam.append(udelezenec.__dict__)
 
         with open('seznam.json', 'w') as dat:
             json.dump(seznam, dat, indent=4)
@@ -27,4 +27,4 @@ def v_seznam(udelezenec):
         with open('seznam.json', 'a') as dat:
             seznam = []
             seznam.append(udelezenec.__dict__)
-            dat.write(json.dumps(seznam))
+            json.dump(seznam, dat, indent=4)
