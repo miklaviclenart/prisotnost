@@ -145,7 +145,7 @@ def prikazi_udelezence():
     try:
         with open('udelezenci.json', 'r', encoding='utf-8') as dat:
             seznam = json.load(dat)
-            
+
         for udelezenec in seznam:
             print(udelezenec['ime'] + " " + udelezenec['priimek'])
 

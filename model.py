@@ -1,5 +1,6 @@
 import json
 
+
 class Udelezenec:
     def __init__(self, ime, priimek) -> None:
         self.ime = ime
@@ -15,7 +16,7 @@ class Dogodek:
 def v_seznam(objekt, ime_datoteke):
     """"Objekt 'udeleženec' zapiše v seznam v JSON datoteki."""
 
-# Ali datoteka s seznamom že obstaja? 
+# Ali datoteka s seznamom že obstaja?
 
     try:
         with open(ime_datoteke, 'r', encoding='utf-8') as dat:
@@ -39,10 +40,10 @@ def prisotni(manjkajoci):
     """Vrne seznam vseh prosotnih, t.j. vseh v 'seznam.json' datoteki, ki jih ne navedemo v seznamu 'manjkajoci'."""
     with open('udelezenci.json', 'r', encoding='utf-8') as dat:
         udelezenci = json.load(dat)
-    
+
     prisotni = []
     for udelezenec in udelezenci:
         if udelezenec['ime'] not in manjkajoci:
             prisotni.append(udelezenec)
-    
+
     return prisotni
