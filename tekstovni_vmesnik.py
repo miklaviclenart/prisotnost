@@ -1,4 +1,5 @@
 import model
+import json
 
 
 ###########################################################
@@ -73,7 +74,9 @@ def tekstovni_vmesnik():
             print(krepko("Kaj bi hoteli narediti?"))
             moznosti = [
                 ("dodaj novega udeleženca", dodaj_udelezenca),
-                ("dodaj nov dogodek", dodaj_dogodek)
+                ("dodaj nov dogodek", dodaj_dogodek),
+                ("prikaži seznam udeležencev", prikazi_udelezence),
+                ("prikaži seznam dogodkov", prikazi_dogodke)
             ]
             izbira = izberi(moznosti)
             print(80 * "=")
@@ -132,6 +135,44 @@ def dodaj_dogodek():
     izbira = input("da/ne... ")
     if izbira == "da":
         dodaj_dogodek()
+
+
+def prikazi_udelezence():
+    print()
+    print(80 * "=")
+    print()
+
+    try:
+        with open('udelezenci.json', 'r', encoding='utf-8') as dat:
+            seznam = json.load(dat)
+            
+        for udelezenec in seznam:
+            print(udelezenec['ime'] + " " + udelezenec['priimek'])
+
+    except FileNotFoundError:
+        print("Nimate še nobenega udeleženca.")
+
+
+def prikazi_dogodke():
+    print()
+    print(80 * "=")
+    print()
+
+    try:
+        with open('dogodki.json', 'r', encoding='utf-8') as dat:
+            seznam = json.load(dat)
+            for dogodek in seznam:
+                print()
+                print(krepko(dogodek['datum']))
+                print("______________________")
+                print()
+                for udelezenec in dogodek['udelezenci']:
+                    print(udelezenec['ime'] + " " + udelezenec['priimek'])
+                print()
+                print("____________________________________________")
+
+    except FileNotFoundError:
+        print("Nimate še nobenega dogodka.")
 
 
 tekstovni_vmesnik()
