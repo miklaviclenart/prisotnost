@@ -73,13 +73,16 @@ def tekstovni_vmesnik():
             print()
             print(krepko("Kaj bi hoteli narediti?"))
             moznosti = [
-                ("dodaj novega udeleženca", dodaj_udelezenca),
-                ("dodaj nov dogodek", dodaj_dogodek),
-                ("prikaži seznam udeležencev", prikazi_udelezence),
-                ("prikaži seznam dogodkov", prikazi_dogodke)
+                ('dodaj novega udeleženca', dodaj_udelezenca),
+                ('dodaj nov dogodek', dodaj_dogodek),
+                ('prikaži seznam udeležencev', prikazi_udelezence),
+                ('prikaži seznam dogodkov', prikazi_dogodke),
+                ('prikaži število udeležencev', stevilo_udelezencev),
+                ('preveri prisotnost udeleženca', prikazi_prisotnost)
             ]
             izbira = izberi(moznosti)
             print(80 * "=")
+            print()
             izbira()
             print()
 
@@ -138,9 +141,6 @@ def dodaj_dogodek():
 
 
 def prikazi_udelezence():
-    print()
-    print(80 * "=")
-    print()
 
     try:
         with open('udelezenci.json', 'r', encoding='utf-8') as dat:
@@ -154,9 +154,6 @@ def prikazi_udelezence():
 
 
 def prikazi_dogodke():
-    print()
-    print(80 * "=")
-    print()
 
     try:
         with open('dogodki.json', 'r', encoding='utf-8') as dat:
@@ -173,6 +170,32 @@ def prikazi_dogodke():
 
     except FileNotFoundError:
         print("Nimate še nobenega dogodka.")
+
+
+def prikazi_prisotnost():
+    
+    udelezenec = input('Ime udeleženca: ')
+    datum = input('Datum dogodka: ')
+
+    try:
+        if model.prisotnost(udelezenec, datum):
+            print(f'{udelezenec} je bil na tem dogodku prisoten.')
+        else:
+            print(f'{udelezenec} na tem dogodku ni bil prisoten.')
+    except UnboundLocalError:
+        print('Na ta datum ni vpisan noben dogodek.')
+
+
+def stevilo_udelezencev():
+
+    stevilo = model.stevilo_v_seznamu('udelezenci.json')
+
+    if stevilo < 3:
+        print(f'Imate {stevilo} udeleženca.')
+    elif stevilo < 5:
+        print(f'Imate {stevilo} udeležence.')
+    else:
+        print(f'Imate {stevilo} udeležencev.')
 
 
 tekstovni_vmesnik()
