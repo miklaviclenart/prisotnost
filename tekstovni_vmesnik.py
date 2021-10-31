@@ -179,9 +179,9 @@ def prikazi_prisotnost():
 
     try:
         if model.prisotnost(udelezenec, datum):
-            print(f'{udelezenec} je bil na tem dogodku prisoten.')
+            print(f'{udelezenec} je bil-a na tem dogodku prisoten-a.')
         else:
-            print(f'{udelezenec} na tem dogodku ni bil prisoten.')
+            print(f'{udelezenec} na tem dogodku ni bil-a prisoten-a.')
     except UnboundLocalError:
         print('Na ta datum ni vpisan noben dogodek.')
 
