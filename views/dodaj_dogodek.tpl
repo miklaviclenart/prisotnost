@@ -8,11 +8,11 @@
       <input class="input" type="text" name="datum" placeholder="dd.mm.llll">
     </div>
   </div>
-  
+
   <p class="label">Manjkajoči:</p>
   % for udelezenec in udelezenci:
-    <input type="checkbox" value="{{udelezenec['ime']}}" name="manjkajoci">
-    {{udelezenec['ime']}} {{udelezenec['priimek']}} <br>
+  <input type="checkbox" value="{{udelezenec['ime']}}" name="manjkajoci">
+  {{udelezenec['ime']}} {{udelezenec['priimek']}} <br>
   % end
 
   <button class="button is-primary" type="submit">Dodaj</button>

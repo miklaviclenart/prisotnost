@@ -68,7 +68,7 @@ def st_prisotnosti(udelezenec):
     """Vrne število dogodkov, na katerih je bil udeleženec prisoten."""
     with open('dogodki.json', 'r', encoding='utf-8') as dat:
         dogodki = json.load(dat)
-    
+
     stevilo = 0
     for dogodek in dogodki:
         if udelezenec in dogodek['udelezenci']:
@@ -80,5 +80,5 @@ def st_prisotnosti(udelezenec):
 def stevilo_v_seznamu(ime_datoteke):
     with open(ime_datoteke, 'r', encoding='utf-8') as dat:
         seznam = json.load(dat)
-    
+
     return len(seznam)

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Prisotnost</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
-  </head>
 
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prisotnost</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+</head>
+
+<body>
 
   <section class="hero is-success is-fullheight">
     <!-- Hero head: will stick at the top -->
@@ -33,7 +34,8 @@
                 Dogodki
               </a>
               <span class="navbar-item">
-                <a class="button is-success is-inverted" href="https://github.com/miklaviclenart/prisotnost" target="_blank" rel="noopener noreferrer">
+                <a class="button is-success is-inverted" href="https://github.com/miklaviclenart/prisotnost"
+                  target="_blank" rel="noopener noreferrer">
                   <span class="icon">
                     <i class="fab fa-github"></i>
                   </span>
@@ -74,5 +76,6 @@
 
   <!-- <footer class='footer'>© 2021, Lenart Miklavič</footer> -->
 
-  </body>
+</body>
+
 </html>
