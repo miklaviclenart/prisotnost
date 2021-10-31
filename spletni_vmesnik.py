@@ -10,16 +10,32 @@ def osnovni_zaslon():
 
 @bottle.get('/udelezenci/')
 def prikazi_udelezence():
-    with open('udelezenci.json', 'r', encoding='utf-8') as dat:
-        udelezenci = json.load(dat)
-    return bottle.template('prikazi_udelezence.tpl', udelezenci=udelezenci)
+    try:
+        with open('udelezenci.json', 'r', encoding='utf-8') as dat:
+            udelezenci = json.load(dat)
+        return bottle.template('prikazi_udelezence.tpl', udelezenci=udelezenci)
+    except FileNotFoundError:
+        bottle.redirect('/udelezenci_opozorilo/')
+
+
+@bottle.get('/udelezenci_opozorilo/')
+def udelezenci_opozorilo():
+    return bottle.template('udelezenci_opozorilo.tpl')
 
 
 @bottle.get('/dogodki/')
 def prikazi_dogodke():
-    with open('dogodki.json', 'r', encoding='utf-8') as dat:
-        dogodki = json.load(dat)
-    return bottle.template('prikazi_dogodke.tpl', dogodki=dogodki)
+    try:
+        with open('dogodki.json', 'r', encoding='utf-8') as dat:
+            dogodki = json.load(dat)
+        return bottle.template('prikazi_dogodke.tpl', dogodki=dogodki)
+    except FileNotFoundError:
+        bottle.redirect('/dogodki_opozorilo/')
+
+
+@bottle.get('/dogodki_opozorilo/')
+def dogodki_opozorilo():
+    return bottle.template('dogodki_opozorilo.tpl')
 
 
 @bottle.get('/dodaj_udelezenca/')
@@ -41,13 +57,16 @@ def dodaj_udelezenca():
 
 @bottle.get('/dodaj_dogodek/')
 def dodaj_dogodek_get():
-    with open('udelezenci.json', 'r', encoding='utf-8') as dat:
-        udelezenci = json.load(dat)
-    return bottle.template('dodaj_dogodek.tpl', udelezenci=udelezenci)
+    try:
+        with open('udelezenci.json', 'r', encoding='utf-8') as dat:
+            udelezenci = json.load(dat)
+        return bottle.template('dodaj_dogodek.tpl', udelezenci=udelezenci)
+    except FileNotFoundError:
+        bottle.redirect('/udelezenci_opozorilo/')
 
 
 @bottle.post('/dodaj_dogodek/')
-def dodaj_udelezenca():
+def dodaj_dogodek():
     datum = bottle.request.forms.getunicode('datum')
     manjkajoci = bottle.request.forms.getall('manjkajoci')
     print(manjkajoci)
@@ -61,17 +80,20 @@ def dodaj_udelezenca():
 
 
 @bottle.get('/analiza/')
-def analiza_get():
+def analiza():
     return bottle.template('analiza.tpl', indikator=False)
 
 
 @bottle.post('/analiza/')
 def analiziraj():
-    ime = bottle.request.forms.getunicode('ime')
-    st_prisotnosti = model.st_prisotnosti(ime)
-    st_dogodkov = model.stevilo_v_seznamu('dogodki.json')
+    try:
+        ime = bottle.request.forms.getunicode('ime')
+        st_prisotnosti = model.st_prisotnosti(ime)
+        st_dogodkov = model.stevilo_v_seznamu('dogodki.json')
 
-    return bottle.template('analiza.tpl', indikator=True, ime=ime, st_prisotnosti=st_prisotnosti, st_dogodkov=st_dogodkov)
+        return bottle.template('analiza.tpl', indikator=True, ime=ime, st_prisotnosti=st_prisotnosti, st_dogodkov=st_dogodkov)
+    except FileNotFoundError:
+        bottle.redirect('/dogodki_opozorilo/')
 
 
 bottle.run(debug=True, reloader=True)
