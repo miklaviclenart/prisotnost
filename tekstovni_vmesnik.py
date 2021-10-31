@@ -173,7 +173,7 @@ def prikazi_dogodke():
 
 
 def prikazi_prisotnost():
-    
+
     udelezenec = input('Ime udeleženca: ')
     datum = input('Datum dogodka: ')
 
