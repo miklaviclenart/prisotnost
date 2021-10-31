@@ -11,7 +11,7 @@
 <body>
 
   <section class="hero is-success is-fullheight">
-    <!-- Hero head: will stick at the top -->
+
     <div class="hero-head">
       <header class="navbar">
         <div class="container">
@@ -48,7 +48,7 @@
       </header>
     </div>
 
-    <!-- Hero content: will be in the middle -->
+
     <div class="hero-body">
       <div class="container has-text-centered">
         <p class="title">
@@ -60,7 +60,7 @@
       </div>
     </div>
 
-    <!-- Hero footer: will stick at the bottom -->
+
     <div class="hero-foot">
       <nav class="tabs is-boxed is-fullwidth">
         <div class="container">
