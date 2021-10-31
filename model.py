@@ -71,8 +71,10 @@ def st_prisotnosti(udelezenec):
 
     stevilo = 0
     for dogodek in dogodki:
-        if udelezenec in dogodek['udelezenci']:
-            stevilo += 1
+        for udelezenci in dogodek['udelezenci']:
+            if udelezenec == udelezenci['ime']:
+                stevilo += 1
+                break
 
     return stevilo
 
