@@ -4,28 +4,47 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
   </head>
+
 <body>
 
-<nav class="navbar is-link" role="navigation" aria-label="main navigation">
-
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-      <a class="navbar-item" href="/">
-        Domov
-      </a>
-
-      <a class="navbar-item" href="/udelezenci/">
-        Udeleženci
-      </a>
-
-      <a class="navbar-item" href="/dogodki">
-        Dogodki
-      </a>
+<div class="hero-head">
+  <header class="navbar">
+    <div class="container">
+      <div class="navbar-brand">
+        <span class="navbar-burger" data-target="navbarMenuHeroC">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </div>
+      <div id="navbarMenuHeroC" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item is-active" href="/">
+            Domov
+          </a>
+          <a class="navbar-item" href="/udelezenci/">
+            Udeleženci
+          </a>
+          <a class="navbar-item" href="/dogodki/">
+            Dogodki
+          </a>
+          <span class="navbar-item">
+            <a class="button is-success is-inverted" href="https://github.com/miklaviclenart/prisotnost">
+              <span class="icon">
+                <i class="fab fa-github"></i>
+              </span>
+              <span>Prenesi</span>
+            </a>
+          </span>
+        </div>
+      </div>
     </div>
-  </div>
-</nav>
+  </header>
+</div>
 
-  {{!base}}
-  <footer class='footer'>© 2021, Lenart Miklavič</footer>
+{{!base}}
+
+<footer class='footer'>© 2021, Lenart Miklavič</footer>
+
 </body>
 </html>

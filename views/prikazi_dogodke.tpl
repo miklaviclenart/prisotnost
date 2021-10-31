@@ -1,15 +1,25 @@
 % rebase('osnova.tpl')
-<h1>Udeleženci</h1>
-<ul>
-    % for dogodek in dogodki:
-    <li>
-        <b> {{dogodek['datum']}} </b> <br>
-        <ul>
-            % for udelezenec in dogodek['udelezenci']:
-            <li>{{udelezenec['ime'] + ' ' + udelezenec['priimek']}}, </li>
-            % end
-        </ul>
-    </li>
-    <br>
-    % end
-</ul>
+
+<section class='section'>
+	<div class='block'>
+		<h1 class='title is-3'>Dogodki</h1>
+	</div>
+
+	<ul class=>
+		% for dogodek in dogodki:
+			<li>
+				<b> {{dogodek['datum']}} </b> <br>
+
+				<div class='content is-small'>
+					<ul>
+						% for udelezenec in dogodek['udelezenci']:
+							<li>{{udelezenec['ime'] + ' ' + udelezenec['priimek']}}</li>
+						% end
+					</ul>
+				</div>
+					
+			</li>
+			<br>
+		% end
+	</ul>
+</section>
