@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title>Prisotnost</title>
@@ -29,7 +30,7 @@
             Dogodki
           </a>
           <span class="navbar-item">
-            <a class="button is-success is-inverted" href="https://github.com/miklaviclenart/prisotnost">
+            <a class="button is-success is-inverted" href="https://github.com/miklaviclenart/prisotnost" target="_blank" rel="noopener noreferrer">
               <span class="icon">
                 <i class="fab fa-github"></i>
               </span>

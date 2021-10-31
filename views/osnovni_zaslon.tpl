@@ -1,79 +1,78 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Prisotnost</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prisotnost</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
   </head>
 
-<body>
+  <body>
 
-<section class="hero is-success is-fullheight">
-  <!-- Hero head: will stick at the top -->
-  <div class="hero-head">
-    <header class="navbar">
-      <div class="container">
-        <div class="navbar-brand">
-          <span class="navbar-burger" data-target="navbarMenuHeroC">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-        </div>
-        <div id="navbarMenuHeroC" class="navbar-menu">
-          <div class="navbar-end">
-            <a class="navbar-item is-active" href="/">
-              Domov
-            </a>
-            <a class="navbar-item" href="/udelezenci/">
-              Udeleženci
-            </a>
-            <a class="navbar-item" href="/dogodki/">
-              Dogodki
-            </a>
-            <span class="navbar-item">
-              <a class="button is-success is-inverted" href="https://github.com/miklaviclenart/prisotnost">
-                <span class="icon">
-                  <i class="fab fa-github"></i>
-                </span>
-                <span>Prenesi</span>
-              </a>
+  <section class="hero is-success is-fullheight">
+    <!-- Hero head: will stick at the top -->
+    <div class="hero-head">
+      <header class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <span class="navbar-burger" data-target="navbarMenuHeroC">
+              <span></span>
+              <span></span>
+              <span></span>
             </span>
           </div>
+          <div id="navbarMenuHeroC" class="navbar-menu">
+            <div class="navbar-end">
+              <a class="navbar-item is-active" href="/">
+                Domov
+              </a>
+              <a class="navbar-item" href="/udelezenci/">
+                Udeleženci
+              </a>
+              <a class="navbar-item" href="/dogodki/">
+                Dogodki
+              </a>
+              <span class="navbar-item">
+                <a class="button is-success is-inverted" href="https://github.com/miklaviclenart/prisotnost" target="_blank" rel="noopener noreferrer">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Prenesi</span>
+                </a>
+              </span>
+            </div>
+          </div>
         </div>
-      </div>
-    </header>
-  </div>
-
-  <!-- Hero content: will be in the middle -->
-  <div class="hero-body">
-    <div class="container has-text-centered">
-      <p class="title">
-        Prisotnost
-      </p>
-      <p class="subtitle">
-        Kdo je tu in kdo ne?
-      </p>
+      </header>
     </div>
-  </div>
 
-  <!-- Hero footer: will stick at the bottom -->
-  <div class="hero-foot">
-    <nav class="tabs is-boxed is-fullwidth">
-      <div class="container">
-        <ul>
-          <li><a href="/dodaj_udelezenca/">Dodaj udeleženca</a></li>
-          <li><a href="/dodaj_dogodek/">Dodaj dogodek</a></li>
-          <li><a href="/analiza/">Analiziraj</a></li>
-          <li><a>Elements</a></li>
-          <li><a>Components</a></li>
-          <li><a>Layout</a></li>
-        </ul>
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <p class="title">
+          Prisotnost
+        </p>
+        <p class="subtitle">
+          Kdo je tu in kdo ne?
+        </p>
       </div>
-    </nav>
-  </div>
-</section>
+    </div>
 
-<footer class='footer'>© 2021, Lenart Miklavič</footer>
+    <!-- Hero footer: will stick at the bottom -->
+    <div class="hero-foot">
+      <nav class="tabs is-boxed is-fullwidth">
+        <div class="container">
+          <ul>
+            <li><a href="/dodaj_udelezenca/">Dodaj udeleženca</a></li>
+            <li><a href="/dodaj_dogodek/">Dodaj dogodek</a></li>
+            <li><a href="/analiza/">Analiziraj</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </section>
 
-</body>
+  <!-- <footer class='footer'>© 2021, Lenart Miklavič</footer> -->
+
+  </body>
 </html>
