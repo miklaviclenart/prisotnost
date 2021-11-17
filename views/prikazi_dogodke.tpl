@@ -5,7 +5,7 @@
 		<h1 class='title is-3'>Dogodki</h1>
 	</div>
 
-	<ul class=>
+	<ul>
 		% for dogodek in dogodki:
 		<li>
 			<b> {{dogodek['datum']}} </b> <br>
