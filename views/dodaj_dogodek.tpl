@@ -11,7 +11,7 @@
 
   <p class="label">Manjkajoči:</p>
   % for udelezenec in udelezenci:
-  <input type="checkbox" value="{{udelezenec['ime']}}" name="manjkajoci">
+  <input type="checkbox" value="udelezenec" name="manjkajoci">
   {{udelezenec['ime']}} {{udelezenec['priimek']}} <br>
   % end
 
