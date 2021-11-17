@@ -102,7 +102,7 @@ def dodaj_udelezenca():
     priimek = input("Priimek udeleženca: ")
 
     udelezenec = model.Udelezenec(ime, priimek)
-    model.v_seznam(udelezenec, 'udelezenci.json')
+    udelezenec.v_seznam()
 
     print()
     print(krepko("Udeleženec uspešno dodan!"))
@@ -130,7 +130,7 @@ def dodaj_dogodek():
         else:
             prisotni = model.prisotni(manjkajoci)
             dogodek = model.Dogodek(datum, prisotni)
-            model.v_seznam(dogodek, 'dogodki.json')
+            dogodek.v_seznam()
             print(krepko("Dogodek uspešno dodan!"))
             break
     print()
